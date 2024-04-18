@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
+import Button from "./Button";
 
 const ServerComponent: React.FC = async () => {
   const t = await getTranslations("ServerComponent");
@@ -10,7 +11,7 @@ const ServerComponent: React.FC = async () => {
     <div>
       <h2>{t("title")}</h2>
       <p>{t("subtitle")}</p>
-      <Link href={t("link")}>{t("cta")}</Link>
+      <Button link={t("button.link")} cta={t("button.cta")} />
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
-import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
+import Button from "./Button";
 
 const ClientComponent: React.FC = () => {
   const t = useTranslations("ClientComponent");
@@ -9,7 +8,7 @@ const ClientComponent: React.FC = () => {
     <div>
       <h2>{t("title")}</h2>
       <p>{t("subtitle")}</p>
-      <Link href={t("link")}>{t("cta")}</Link>
+      <Button link={t("button.link")} cta={t("button.cta")} />
     </div>
   );
 };
